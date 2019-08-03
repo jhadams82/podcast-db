@@ -29,15 +29,22 @@ router.post('/', (req, res, next) => {
     const podcast = new Podcast({
         _id: new mongoose.Types.ObjectId(),
         category: req.body.category,
+        contact: req.body.contact,
+        description: req.body.description,
+        hosts: req.body.hosts,
+        image: req.body.image,
+        status: req.body.status,
+        subscription: req.body.subscription,
         title: req.body.title,
-        description: req.body.description
+        username: req.body.username,
+        yearStarted: req.body.yearStarted
     });
     podcast
         .save()
         .then(result => {
             console.log(result);
             res.status(201).json({
-                message: "Handling POST requests to /podcasts",
+                message: "New Podcast Created:",
                 createdPodcast: result
             });
         })
