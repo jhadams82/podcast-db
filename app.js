@@ -2,8 +2,16 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const podcastRoutes = require('./api/routes/podcasts')
+
+mongoose.connect(
+    "mongodb+srv://npcAdmin:" + 
+    encodeURIComponent(process.env.MONGO_ATLAS_PW) + 
+    "@nashville-podcast-db-9jz2j.mongodb.net/test?retryWrites=true&w=majority", 
+    { useNewUrlParser: true }
+);
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
