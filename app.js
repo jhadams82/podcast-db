@@ -6,10 +6,15 @@ const mongoose = require('mongoose');
 
 const podcastRoutes = require('./api/routes/podcasts')
 
+// mongoose.connect(
+//     "mongodb+srv://npcAdmin:" + 
+//     encodeURIComponent(process.env.MONGO_ATLAS_PW) + 
+//     "@nashville-podcast-db-9jz2j.mongodb.net/test?retryWrites=true&w=majority", 
+//     { useNewUrlParser: true }
+// );
+
 mongoose.connect(
-    "mongodb+srv://npcAdmin:" + 
-    encodeURIComponent(process.env.MONGO_ATLAS_PW) + 
-    "@nashville-podcast-db-9jz2j.mongodb.net/test?retryWrites=true&w=majority", 
+    "mongodb+srv://npcAdmin:Nash1Pod2Cast%23@nashville-podcast-db-9jz2j.mongodb.net/test?retryWrites=true&w=majority", 
     { useNewUrlParser: true }
 );
 
